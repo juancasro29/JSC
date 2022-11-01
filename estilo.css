@@ -1,0 +1,1616 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+/* HERO; Esta parte del proyecto se uso para estilizar la aparte principal o hero de la pagina. Las fuentes que se van a usar tanto en el body como en los headings adicionalmente, un padding container personalizado que sirva para y aplique a las páginas realizadas,
+Cabe destacar como mencioné en la memoria que en principio buscaba hacer una Web One page, sin embargo luego de hacer dos intentos en diferentes formas y estilos decidi juntarlos
+para poder tener más tiempo desarrollando mis capacidades de fuisonar dos paginas completyamente distintas, las cuales fueron un reto en lo personal.
+Por eso se ve que solo reciclo el footer de las dos paginas y una parte del header.  */
+
+:root{
+    --padding-container: 100px 0;
+    --color-title: #001a49
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: var(--padding-container);
+}
+
+
+.hero__title{
+   font-family: 'Domine', serif;
+
+}
+.hero{
+    width: 100%;
+    height: 87vh;
+    min-height: 600px;
+    max-height: 800px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: white;
+
+
+}
+.hero::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+    z-index: -1;
+
+
+}
+/* nav : Através dre este se le dio estilo a la seccion de navegación con la categoria padre de nav se le busco dar a todos sus dejmas hijos y estilizsrlos de la misma manera.*/
+
+
+.logo__img{
+    padding: var(--padding-container);
+    position:relative;
+    box-sizing: content-box; 
+    width: 220px;
+    margin-top: 30px;
+    margin-left: 188px;
+    
+
+}
+
+.nav{
+    --padding-container:0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+.nav__title{
+    font-family: 'Imperial Script';
+    letter-spacing: 0.11ch;
+    font-size: 25px;
+
+}
+.nav__link{
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+}
+.nav__items{
+    list-style: none;
+}
+
+.nav__links{
+    color:white;
+    text-decoration: none;
+
+}
+.nav__menu{
+   margin-left: auto ;
+   cursor: pointer;
+   display: none;
+
+
+}
+
+.nav__img{
+    display: block;
+    width: 30px;
+
+}
+
+.nav__close{
+    display: var(--show, none);
+}
+
+/* hero container : MAs puntualmente sobre los contenidos del Hero como es estilo de sus tipografias en el titulo y en los parrafos.Tambien se le dio estilo al boton clickeable del CTA dandole un color azul que quede resaltado frente al dise;o de la pagina
+Se leda apropiadamente un display grid al container un text align para centrarlo y se deja un gap de 1em para los espacios */
+
+.hero__container{
+    max-width: 800px;
+    display: grid;
+    --padding-container:0;
+    grid-auto-rows: max-content ;
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.hero__title{
+    font-size: 4.5rem;
+}
+
+.hero__paragraph{
+    margin-bottom: 20px;
+    
+}
+.cta{
+    display: inline-block;
+    background-color: #2091f9 ;
+    justify-self: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+
+
+
+}
+
+/* Sección about: Seccion about se hizo a tres columnas para darle más espacio y respiro a la página. Para esto se uso el grid template columns repeat autofit, y que justamente se acolparan al tamano establecido Se organizaron tres columnas de texto con sus respectivos logos  y unas breve descripciones de las fortalezas del proyecto. 
+También se uso la var de color Title para establecer a los titulos el color variable predeterminado. A los inocos respectivamente se les posiciono con display grid y el justify items center. */
+
+.about{
+    text-align: center;
+
+}
+.subtitle{
+    color: var(--color-title);
+    font-size: 2rem;
+    margin-bottom: 35px;
+
+}
+
+
+.about__paragraph{
+    line-height: 1.7;
+}
+
+.about__main{
+    padding-top: 80px;
+    padding-bottom: 50px;
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1em;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+
+
+
+}
+.about__icons{
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+    width: 260px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.about__icon{
+    width: 40px;
+
+}
+
+/* Seccion knowledge; A la seccion de knowledge decidi darle un background color  con unos vectores que asimilan unos puntos para darle un poco mas de oclor a la pagina, a este se le aplico 
+una tranpsarencia o opacidad para que quedara muy tenue, en cuanto al mockup lo realice en figma y se importo como png dandole un display b;lock para posicionarlo adecuadamente */
+
+.knowledge{
+background-color: #e5e5f7;
+opacity: 0.8;
+background-image:  radial-gradient(#04b5f0 0.5px, transparent 0.5px), radial-gradient(#d408ff 0.5px, #e5e5f7 0.5px);
+background-size: 20px 20px;
+background-position: 0 0,10px 10px;
+overflow: hidden;
+
+}
+
+.knowledge__container{
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+
+}
+
+.knowledge__picture{
+    max-width: 500px;
+}
+
+.knowledge__paragraph{
+    padding: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.knowledge__img{
+    width: 100%;
+    display: block;
+}
+
+
+/* La seccion de price o tablas de precios consta de tres cards donde muestran los precios. Se uso la etiqueta pricer element best para darle el
+color anarnajado a la mejor opcion y resaltarla del resto. Se le dió tambien su color a los botones para que quedara armónico en el diseno. */
+
+.price__container{
+    margin: 50px;
+    text-align: center;
+    }
+
+.price__table{
+    padding-top: 60px; 
+    display:flex;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.price__element{
+    background-color: #e5e5f7;
+    text-align: center;
+    border-radius: 10px;
+    width: 330px;
+    padding: 40px;
+    --color-plan: #696871;
+    --color-price: #1d293f;
+    --bg-cta: #fff;
+    --color-cta: #5454d4;
+    --color-items: #696871;
+
+}
+
+.price__element--best{
+    width: 370px;
+    padding: 60px 40px;
+    background-color: #ff7143;
+    --color-plan: rgb(255 255 255 / 75% );
+    --color-price: #fff;
+    --bg-cta: #9f3919;
+    --color-cta: #fff;
+    --color-items: #fff;
+
+}
+
+.price__name{
+    color: var(--color-plan);
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.price__price{
+    font-size: 2.5rem;
+    color: var(--color-price);
+}
+
+.price__items{
+    margin-top: 35px;
+    display: grid;
+    gap: 1em;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: var(--color-items);
+
+}
+
+.price__cta{
+    display: block;
+    padding: 20px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: white;
+    font-weight: 600;
+    color:#2091f9
+
+
+}
+
+
+
+
+/* Seccion Testimony: En la seccion de testimonos quise hacer una especie de carrusel por medio de javascript donde al darle clic a la flecha vayan surgiendo más testimonios.
+Se le dio una transicion de 1.5s ease in out para que quedara estetico. Las imagenes se hicieorn en circulos con el border radius.
+  */
+
+.testimony{
+    background-color: #e5e5f7;
+
+}
+
+.testimony__container{
+    margin: 40px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 1em;
+    align-items: center;
+
+}
+
+.testimony__body{
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+}
+.testimony__body--show{
+    pointer-events: unset;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+.testimony__img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+
+.testimony__texts{
+    max-width: 700px;
+}
+.testimony__course{
+    background-color: royalblue;
+    color:#fff;
+    display: inline-block;
+    padding: 5px;
+
+
+
+}
+.testimony__arrow{
+    width: 90%;
+    cursor: pointer;
+}
+
+
+/*Luego desarrollé la sección de questions que a su vez también realicé  con funcionalidades de Javascript para poder clickearlas y que se muestren o se escondan.  Tambiémn sus flechas cambian de dirección.*/
+
+.questions{
+    text-align: center;
+}
+
+.questions__container{
+    padding-top: 50px;
+    padding-bottom: 100px;
+    display: grid;
+    gap: 2em;
+
+}
+.questions__padding{
+    padding: 0;
+    transition: padding .3s;
+    border: 1px solid #5454d4;
+    border-radius: 6px;
+}
+
+.questions__padding--add{
+    padding-bottom: 30px;
+}
+
+.questions__answer{
+    padding: 0 30px 0;
+    overflow: hidden;
+
+}
+
+.questions__title{
+    display: flex;
+    padding: 30px 0 30px;
+    cursor: pointer;
+    color:#5454d4;
+    justify-content: space-between;
+    
+
+}
+
+.questions__arrow{
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--color-title);
+    border-radius: 50%;
+    background-color: #f3ebf8;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    align-self: flex-end;
+    margin-left: 10px;
+    transition: transform .3s;
+
+}
+
+.questions__arrow--rotate{
+    transform: rotate(180deg);
+}
+
+.questions__show{
+    text-align: left;
+    height: 0;
+    transition: height .3s;
+}
+
+.questions__img{
+    display: block;
+}
+
+.questions__copy{
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+
+}
+/* servicios */
+.about-services{
+    background: #ffffff;
+    padding: 30px;
+    flex-wrap: wrap;
+    
+}
+
+
+
+
+.servicio-cont{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.4;
+}
+
+.servicio-ind{
+    width: 28%;
+    text-align: center;
+}
+
+.servicio-ind img{
+    width: 80%;
+}
+
+.servicio-ind h3{
+    margin-top: 30px;
+    padding: auto;
+    color: #21218f;
+}
+
+.servicio-ind p{
+    font-weight: 300;
+    text-align: justify;
+}
+/* Footer > en el footer se divide por la partye de los titulos los menus de navegacion y un input para escribir correos electronicos y registro, cabe mencionar que es el mismo para las paginas del home y acerca de */
+
+.footer{
+    margin-top: 30px;
+    background-color: #252525;
+    padding: 70px;
+}
+
+.footer__title{
+    color: #2091f9;
+    padding-left: -30px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: oblique;
+    
+    
+}
+
+.footer__title, .footer__newsletter{
+    
+    color: #fff;
+} 
+
+.footer__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 60px;
+}
+
+.nav--footer{
+    padding-bottom: 20px;
+    display: grid;
+    gap: 1em;
+    grid-auto-flow: row;
+    height: 100%;
+}
+
+.nav__link--footer{
+    display: flex;
+    margin: 0;
+    margin-right: 20px;
+    flex-wrap: wrap;
+}
+
+.footer__inputs{
+    margin-top: 10px;
+    display: flex;
+    overflow: hidden;
+
+}
+
+.footer__input{
+    background-color: #fff;
+    height: 50px;
+    display: block;
+    padding-left: 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    margin-right: 16px;
+    
+}
+
+.footer__submit{
+    margin-left: auto;
+    display: inline-block;
+    height: 50px;
+    padding: 0 20px;
+    background-color: #2091f9;
+    border: none;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
+.footer__copy{
+    --padding-container: 30px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.footer__copyright{
+    font-weight: 300;
+}
+
+.footer__icons{
+    display: inline-flex;
+    margin-bottom: 10px;
+
+}
+
+.footer__img{
+    width: 30px;
+
+}
+
+
+
+/* Media queries> con las media queries busque hacer el diseno de la pagina responsive, esto se le agrego un menu que al cerrarlo se habilite automaticamente por medio de javascript y peude cerrarse de igual manera*/
+
+@media (max-width:800px){
+    .nav__menu{
+        display: block;
+    }
+
+    .nav__link--menu{
+        position: fixed;
+        background-color: #000;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items:  center;
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+        transition: .7s opacity;
+    }
+
+    .nav__link--show{
+        --show: block;
+        opacity:1 ;
+        pointer-events: unset;
+    }
+
+    .nav__close{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .hero__title{
+        font-size: 2.5rem;
+    }
+
+
+    .about__main{
+        gap: 2em;
+    }
+
+    .about__icons:last-of-type{
+        grid-column: 1/-1;
+    }
+
+
+    .knowledge__container{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+        gap: 3em;
+        text-align: center;
+    }
+
+    .knowledge__picture{
+        grid-row: 1/2;
+        justify-self: center;
+    }
+
+    .testimony__container{
+        grid-template-columns: 30px 1fr 30px;
+    }
+
+    .testimony__body{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
+        gap: 3em;
+        justify-items:center ;
+    }
+
+
+    .testimony__img{
+        width: 200px;
+        height: 200px;
+        
+    }
+
+    .questions__copy{
+        width: 100%;
+    }
+
+    .footer__container{
+        flex-wrap: wrap;
+    }
+
+    .nav--footer{
+        width: 100%;
+        justify-items: center;
+    }
+
+    .nav__link--footer{
+        width: 100%;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+
+    .footer__form{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .footer__input{
+        flex: 1;
+    }
+
+}
+
+@media (max-width:600px){
+    .hero__title{
+        font-size: 2rem;
+    }
+
+    .hero__paragraph{
+        font-size: 1rem;
+    }
+
+    .subtitle{
+        font-size: 1.8rem;
+    }
+
+    .price__element{
+        width: 90%;
+    }
+
+    .price__element--best{
+        width: 90%;
+        /* padding: 40px; */
+    }
+
+    .price__price{
+        font-size: 2rem;
+    }
+
+    .testimony{
+        --padding-container: 60px 0;
+    }
+
+    .testimony__container{
+        grid-template-columns: 28px 1fr 28px;
+        gap: .9em;
+    }
+
+    .testimony__arrow{
+        width: 100%;
+    }
+
+    .testimony__course{
+        margin-top: 15px;
+    }
+
+    .questions__title{
+        font-size: 1rem;
+    }
+
+    .footer__title{
+        justify-self: start;
+        margin-bottom: 15px;
+    }
+
+    .nav--footer{
+        padding-bottom: 60px;
+    }
+
+    .nav__link--footer{
+        justify-content: space-between;
+    }
+
+    .footer__inputs{
+        flex-wrap: wrap;
+    }
+
+    .footer__input{
+        flex-basis: 100%;
+        margin: 0;
+        margin-bottom: 16px;
+    }
+
+    .footer__submit{
+        margin-right: auto;
+        margin-left: 0;
+        
+
+        /* 
+        margin:0;
+        width: 100%;
+        */
+    }
+}
+
+/* galeria */
+.subtitle__port{
+    --padding-container: 100px 0;
+    --color-title: #001a49;
+    color: var(--color-title);
+    font-size: 2rem;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+  
+}
+.portafolio{
+	background: #ffffff;
+}
+
+.galeria-port{
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+
+}
+.imagen-port{
+	width: 24%;
+	height: 200px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+
+
+}
+
+.imagen-port > img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	overflow: hidden;
+}
+
+.hover-galeria{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	transform: scale(0); 
+	background: hsla(273, 91%, 27%, 0.7);
+	transition: transform .5s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.hover-galeria img{
+	width: 50px;
+}
+
+.hover-galeria p{
+	color: #fff;
+}
+
+.imagen-port:hover .hover-galeria{
+	transform: scale(1);
+}
+
+/*-----------------------------------PAGINA ACERCA DE
+
+En la 2 pagina de acerca de se intento darle una forma parecida con el header sin embargo dejandolo claramente un poco mas delgado y que no quedara como el hero principal---------------------------------------------*/
+
+.logo__img{
+    padding: var(--padding-container);
+    position:relative;
+    box-sizing: content-box; 
+    width: 220px;
+    margin-top: 30px;
+    margin-left: 188px;
+    
+
+}
+
+.nav2{
+    --padding-container:0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+.nav2__title{
+    font-family: 'Imperial Script';
+    letter-spacing: 0.11ch;
+    font-size: 25px;
+
+}
+.nav2__link{
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+}
+.nav2__items{
+    list-style: none;
+}
+
+.nav2__links{
+    color:white;
+    text-decoration: none;
+
+}
+.nav2__menu{
+   margin-left: auto ;
+   cursor: pointer;
+   display: none;
+
+
+}
+
+.nav2__img{
+    display: block;
+    width: 30px;
+
+}
+
+.nav2__close{
+    display: var(--show, none);
+}
+
+
+
+body{
+	font-family: 'poppins', sans-serif;
+}
+.logo{
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 250px;
+    height: 50px;
+    padding: 10px;
+    margin: 0px;
+}
+.logo img{
+    display: block;
+    width: 100%;
+}
+
+.contenedor{
+	padding: 10px 0;
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+	overflow: hidden;
+}
+
+.titulo{
+	color: #000;
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+/* Header*/
+
+header{
+	width: 100%;
+	height: 340px;
+	background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url(../IMG/neonxx.jpg);
+    background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+}
+
+nav{
+	text-align: right;
+	padding: 30px 50px 0 0;
+
+}
+
+nav > a{
+	color: #fff;
+	font-weight: 300;
+	text-decoration: none;
+	margin-right: 15px;
+}
+
+nav > a:hover{
+	text-decoration: none;
+ 
+}
+
+header .textos-header{
+	display: flex;
+	height: 97px;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+
+}
+
+.textos-header h1{
+    font-family: 'Domine', serif;
+    font-size: 2.0rem;
+	color: #fff;
+
+
+}
+
+.textos-header h2{
+	font-size: 30px;
+	font-weight: 300;
+	color: #fff;
+
+}
+
+.textos-header h3{
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff;
+
+}
+
+.wave{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+
+/* seccion about us */
+
+:root{
+  --background-dark: #ffffff;
+  --text-light: rgba(255, 255, 255, 0.892);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+
+*{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+  font-family: 'poppins', sans-serif;
+  font-size: 14px;
+}
+
+body{
+  height: 100%;
+}
+
+.hero-section{
+  align-items: flex-start;
+  background-image: linear-gradient(15deg, #fff 0%, #fff 150%);
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.tarjetas-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px){
+  .tarjetas-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .tarjetas-grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+.tarjetas{
+  list-style: none;
+  position: relative;
+}
+
+.tarjetas:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.tarjetas__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  transform: scale(1) translateZ(0);
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.tarjetas:hover .tarjetas__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.tarjetas-grid:hover > .tarjetas:not(:hover) .tarjetas__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.tarjetas__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.tarjetas__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.tarjetas__heading{
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(94, 70, 229, 0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+
+/*CONTENEDOR SOBRE NOSOTROS "IDEAS INNOVADORAS
+en esta seccion buscamos darle unas parrafos de texto y pequenos descriptivos psobre la idea de mi agencia insurgente marekting. Los contenidos de los textos se hicieron para que fueran numerados.*/
+
+.contenedor-sobre-nosotros{
+	display: flex;
+	justify-content: space-around;
+    margin-right: 10px;
+    position: relative;
+    padding: 0px 0;
+}
+
+.imagen-about-us{
+	width: 32%;
+    align-content: space-between;
+    display: inline-block;
+    align-items: center;
+
+}
+
+.sobre-nosotros .contenido-textos{
+	width: 100%;
+    line-height: 1.7;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenido-textos h3{
+	margin-bottom: 15px;
+}
+
+.contenido-textos h3 span{
+	background: #4d0686;
+	color:#fff;
+	border-radius: 50%;
+	display: inline-block;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	padding: 2px;
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+	margin-right: 5px;
+}
+
+.contenido-textos p{
+	padding: 0px 0px 30px 15px;
+    line-height: 1.7;
+	font-weight: 300;
+	text-align: justify;
+}
+
+/* Galeria : Esta galeria es el mismo portfolio con las imagenes y los hover de color morado con cada uno de los productos ofrecidos. Es importante menacionar que este se dedico ubicar en el home ya que le daba mas alageria a la pagina. Se usaron
+propiedas como transition para darle esa animacion al hover al pasar el cursor. Entre otrtas propiedas para que uqedaraa esteticamente.*/
+
+.portafolio{
+	background: #fff;
+}
+
+.galeria-port{
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+
+}
+.imagen-port{
+	width: 24%;
+	height: 200px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+
+
+}
+
+.imagen-port > img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	overflow: hidden;
+}
+
+.hover-galeria{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	transform: scale(0); 
+	background: hsla(273, 91%, 27%, 0.7);
+	transition: transform .5s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.hover-galeria img{
+	width: 50px;
+}
+
+.hover-galeria p{
+	color: #fff;
+}
+
+.imagen-port:hover .hover-galeria{
+	transform: scale(1);
+}
+
+
+
+
+
+
+
+/*  Seccion de nuestros servicios e ilustraciones. Se realizaron tres ilustraciones para implementar en la página.*/
+
+.about-services{
+    background : #fff;
+    padding-bottom: 30px;
+}
+
+
+.servicio-cont{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.servicio-ind{
+    width: 28%;
+    text-align: center;
+}
+
+.servicio-ind img{
+    width: 90%;
+}
+
+.servicio-ind h3{
+    margin: 10px 0;
+}
+
+.servicio-ind p{
+    font-weight: 300;
+    text-align: justify;
+}
+
+
+/* footer */
+
+.footer{
+    margin-top: 30px;
+    background-color: #252525;
+    padding: 70px;
+}
+
+.footer__title{
+    color: #2091f9;
+    padding-left: -30px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: oblique;
+    
+    
+}
+
+.footer__title, .footer__newsletter{
+    
+    color: #fff;
+} 
+
+.footer__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 60px;
+}
+
+.nav--footer{
+    padding-bottom: 20px;
+    display: grid;
+    gap: 1em;
+    grid-auto-flow: row;
+    height: 100%;
+}
+
+.nav__link--footer{
+    display: flex;
+    margin: 0;
+    margin-right: 20px;
+    flex-wrap: wrap;
+}
+
+.footer__inputs{
+    margin-top: 10px;
+    display: flex;
+    overflow: hidden;
+
+}
+
+.footer__input{
+    background-color: #fff;
+    height: 50px;
+    display: block;
+    padding-left: 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    margin-right: 16px;
+    
+}
+
+.footer__submit{
+    margin-left: auto;
+    display: inline-block;
+    height: 50px;
+    padding: 0 20px;
+    background-color: #2091f9;
+    border: none;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
+.footer__copy{
+    --padding-container: 30px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.footer__copyright{
+    font-weight: 300;
+}
+
+.footer__icons{
+    display: inline-flex;
+    margin-bottom: 10px;
+
+}
+
+.footer__img{
+    width: 30px;
+
+}
+
+/* CREATIVE */
+
+
+
+
+@media screen and (max-width:900px){
+    header{
+        background-position: center;
+    }
+
+    .contenedor-sobre-nosotros{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+    .sobre-nosotros .contenido-textos{
+        width: 90%;
+    }
+
+    .imagen-about-us{
+        width: 90%;
+    }
+
+    /* Galeria */
+
+    .imagen-port{
+        width: 44%;
+    }
+
+    /* Clientes */
+
+    .tarjetass{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tarjetass .tarjetas{
+        width: 90%;
+    }
+
+    .tarjetass .tarjetas:first-child{
+        margin-bottom: 30px;
+    }
+
+    /* servicios */
+
+    .servicio-cont{
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .servicio-ind{
+        width: 100%;
+        text-align: center;
+    }
+
+    .servicio-ind:nth-child(1), .servicio-ind:nth-child(2){
+        margin-bottom: 60px;
+    }
+
+    .servicio-ind img{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:500px){
+    nav{
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+
+    nav > a{
+        margin-right: 5px;
+    }
+
+    .textos-header h1{
+        font-size: 35px;
+    }
+
+    .textos-header h2{
+        font-size: 20px;
+    }
+
+    /* ABOUT US */
+
+    .imagen-about-us{
+        margin-bottom: 60px;
+        width: 99%;
+    }
+
+    .sobre-nosotros .contenido-textos{
+        width: 95%;
+    }
+
+    /* Galeria */
+
+    .imagen-port{
+        width: 95%;
+    }
+
+    /* Clients */
+
+    .tarjetass .tarjetas{
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjetass .tarjetas img{
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Footer */
+    .footer{
+        margin-top: 30px;
+        background-color: #252525;
+        padding: 70px;
+    }
+    
+    .footer__title{
+        color: #2091f9;
+        padding-left: -30px;
+        margin-bottom: 40px;
+        font-weight: 300;
+        font-size: 2rem;
+        font-weight: 400;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-style: oblique;
+        
+        
+    }
+    
+    .footer__title, .footer__newsletter{
+        
+        color: #fff;
+    } 
+    
+    .footer__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 60px;
+    }
+    
+    .nav--footer{
+        padding-bottom: 20px;
+        display: grid;
+        gap: 1em;
+        grid-auto-flow: row;
+        height: 100%;
+    }
+    
+    .nav__link--footer{
+        display: flex;
+        margin: 0;
+        margin-right: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .footer__inputs{
+        margin-top: 10px;
+        display: flex;
+        overflow: hidden;
+    
+    }
+    
+    .footer__input{
+        background-color: #fff;
+        height: 50px;
+        display: block;
+        padding-left: 10px;
+        border-radius: 6px;
+        font-size: 1rem;
+        outline: none;
+        border: none;
+        margin-right: 16px;
+        
+    }
+    
+    .footer__submit{
+        margin-left: auto;
+        display: inline-block;
+        height: 50px;
+        padding: 0 20px;
+        background-color: #2091f9;
+        border: none;
+        font-size: 1rem;
+        color: #fff;
+        border-radius: 6px;
+        cursor: pointer;
+    
+    }
+    
+    .footer__copy{
+        --padding-container: 30px 0;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .footer__copyright{
+        font-weight: 300;
+    }
+    
+    .footer__icons{
+        display: inline-flex;
+        margin-bottom: 10px;
+    
+    }
+    
+    .footer__img{
+        width: 30px;
+    
+    }
